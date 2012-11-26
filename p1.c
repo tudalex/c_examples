@@ -32,14 +32,16 @@ void sort(int *a, int *b, int *c) {
 	}
 	
 }
+void citire(int *a, int *b, int *c) {
+	scanf("%d %d %d", a, b, c); // Fiind ca sunt pointeri nu mai trebuie sa folosim operatorul & deoarece ei contin adresele de memorie unde trebuiesc scrise datele 
+}
 int main() {
 	// Alocam memoria pentru pointeri
-	int *a = (int*)malloc(sizeof(int)); // Trebuie castuita la (int*) ca malloc intoarce (void*)
-	int *b = (int*)malloc(sizeof(int)); // Idem
-	int *c = (int*)malloc(sizeof(int)); // Idem
+	int a, b, c;
 
-	scanf("%d %d %d", a, b, c); // Fiind ca sunt pointeri nu mai trebuie sa folosim operatorul & deoarece ei contin adresele de memorie unde trebuiesc scrise datele 
-	sort(a, b, c);
-	printf("%d %d %d\n", *a, *b, *c); // Trebuie stelute ca trebuie trimise valorile
+	// Cu & transformam din variabile in pointerii lor
+	citire(&a, &b, &c);
+	sort(&a, &b, &c); 
+	printf("%d %d %d\n", a, b, c); // Trebuie stelute ca trebuie trimise valorile
 	return 0;
 }
