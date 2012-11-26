@@ -7,10 +7,10 @@ void solve(int *a, int poz, int size) {
 	solve(a, poz+2, size); // Apelam recursiv, crescand poz cu 2
 
 }
-void citire(int *a, int *n) {
+void citire(int *a, int *pointer_n) {
 	int i;
-	scanf("%d ", n); // Citesc numarul de elemente
-	for (i = 0; i < *n; ++ i)
+	scanf("%d ", pointer_n); // Citesc numarul de elemente
+	for (i = 0; i < *pointer_n; ++ i)
 		scanf("%d", &a[i]);
 }
 int main() {
